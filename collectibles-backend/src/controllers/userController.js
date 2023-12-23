@@ -11,8 +11,8 @@ const createUser = async (req, res) => {
       return res.status(400).json({ error: 'User already exists' });
     }
 
-    // Create a new user and their collection
-    const newUser = await UserModel.create({ userId, collectibles: { comics: [] } });
+    // Create a new user
+    const newUser = await UserModel.create({ userId });
 
     res.json(newUser);
   } catch (error) {
